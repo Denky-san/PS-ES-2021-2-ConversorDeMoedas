@@ -1,0 +1,6 @@
+D:\Projeto de Software\Todolist ver 2\Database\bin\Debug\Database.dll
+D:\Projeto de Software\Todolist ver 2\Database\bin\Debug\Database.pdb
+D:\Projeto de Software\Todolist ver 2\Database\obj\Debug\Database.csproj.AssemblyReference.cache
+D:\Projeto de Software\Todolist ver 2\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+D:\Projeto de Software\Todolist ver 2\Database\obj\Debug\Database.dll
+D:\Projeto de Software\Todolist ver 2\Database\obj\Debug\Database.pdb

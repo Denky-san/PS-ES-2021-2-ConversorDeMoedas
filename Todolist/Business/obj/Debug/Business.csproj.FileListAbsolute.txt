@@ -1,0 +1,9 @@
+D:\Projeto de Software\Todolist ver 2\Business\bin\Debug\Business.dll
+D:\Projeto de Software\Todolist ver 2\Business\bin\Debug\Business.pdb
+D:\Projeto de Software\Todolist ver 2\Business\bin\Debug\Database.dll
+D:\Projeto de Software\Todolist ver 2\Business\bin\Debug\Database.pdb
+D:\Projeto de Software\Todolist ver 2\Business\obj\Debug\Business.csproj.AssemblyReference.cache
+D:\Projeto de Software\Todolist ver 2\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+D:\Projeto de Software\Todolist ver 2\Business\obj\Debug\Business.csproj.CopyComplete
+D:\Projeto de Software\Todolist ver 2\Business\obj\Debug\Business.dll
+D:\Projeto de Software\Todolist ver 2\Business\obj\Debug\Business.pdb
