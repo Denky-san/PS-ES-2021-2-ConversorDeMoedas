@@ -1,4 +1,5 @@
-﻿@{
+﻿@model UsuarioModel
+@{
     ViewData["Title"] = "Editar Usuário";
 }
 
@@ -9,15 +10,17 @@
 
 </div>
 
-<form>
+<form asp-controller="Usuario" asp-action="Alterar" method="post">
+
+    <input type="hidden" asp-for="Id"/>
     <div class="mb-3">
         <label for="Nome" class="form-label">Nome</label>
-        <input type="text" class="form-control" placeholder="Digite o nome do Usuário">
+        <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do Usuário">
     </div>
 
     <div class="mb-3">
         <label for="Email" class="form-label">Email</label>
-        <input type="text" class="form-control" placeholder="Digite o email do Usuário">
+        <input type="text" asp-for="Email" class="form-control" placeholder="Digite o email do Usuário">
     </div>
 
     <div class="text-center">
