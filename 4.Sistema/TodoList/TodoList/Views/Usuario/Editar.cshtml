@@ -4,10 +4,7 @@
 }
 
 <div class="text-center">
-
-    <h1 class="display-4">Edtar Usuário</h1>
-
-
+    <h1 class="display-4">Editar Usuário</h1>
 </div>
 
 <form asp-controller="Usuario" asp-action="Alterar" method="post">
@@ -16,11 +13,13 @@
     <div class="mb-3">
         <label for="Nome" class="form-label">Nome</label>
         <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome do Usuário">
+        @Html.ValidationMessageFor(x => x.Nome)
     </div>
 
     <div class="mb-3">
         <label for="Email" class="form-label">Email</label>
         <input type="text" asp-for="Email" class="form-control" placeholder="Digite o email do Usuário">
+        @Html.ValidationMessageFor(x => x.Email)
     </div>
 
     <div class="text-center">

@@ -43,24 +43,70 @@ namespace TodoList.Controllers
 
         public IActionResult Apagar(int id)
         {
-            _usuarioRepositorio.Apagar(id);
-            return RedirectToAction("Index");
+            try
+            {
+                bool apagado = _usuarioRepositorio.Apagar(id);
+
+                if (apagado)
+                {
+                    TempData["MensagemSucesso"] = "Contato apagado com sucesso.";
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "Ops, não foi possivel apagar o usuário.";
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não conseguimos apagar seu usuário. Detalhes do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
 
         public IActionResult Criar(UsuarioModel usuario)
         {
-            _usuarioRepositorio.Adicionar(usuario);
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _usuarioRepositorio.Adicionar(usuario);
+                    TempData["MensagemSucesso"] = "Contato cadastrado com sucesso.";
+                    return RedirectToAction("Index");
+                }
+
+
+                return View(usuario);
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar seu usuário. Detalhes do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
 
         public IActionResult Alterar(UsuarioModel usuario)
         {
-            _usuarioRepositorio.Atualizar(usuario);
-            return RedirectToAction("Index");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _usuarioRepositorio.Atualizar(usuario);
+                    TempData["MensagemSucesso"] = "Contato alterado com sucesso.";
+                    return RedirectToAction("Index");
+                }
+
+                return View("Editar", usuario);
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não conseguimos alterar o usuário. Detalhes do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
     }
 }
