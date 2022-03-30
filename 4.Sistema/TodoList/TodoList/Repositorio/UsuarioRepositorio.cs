@@ -43,6 +43,9 @@ namespace TodoList.Repositorio
 
             usuarioDB.Nome = usuario.Nome;
             usuarioDB.Email = usuario.Email;
+            usuarioDB.Login = usuario.Login;
+            usuarioDB.Senha = usuario.Senha;
+            usuarioDB.Perfil = usuario.Perfil;
 
             _bancoContext.Usuarios.Update(usuarioDB);
             _bancoContext.SaveChanges();

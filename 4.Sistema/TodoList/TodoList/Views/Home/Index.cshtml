@@ -2,7 +2,61 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Bem-vindo!</h1>
-    <p>Projeto de Software em MVC.</p>
-</div>
+
+<body style="background-color:black">
+
+    <div class="square"></div>
+
+    <img src="~/to-do-list-logo.png" alt="Logo ToDoList" class="logo">
+
+
+    <div class="login">
+        <label for="Nome" class="form-label" style="color:white;">Login</label>
+        <input type="text" class="form-control" placeholder="Digite seu Login">
+    </div>
+
+    <div class="senha">
+        <label for="Senha" class="form-label" style="color:white">Senha</label>
+        <input type="password" class="form-control" placeholder="Digite sua Senha">
+    </div>
+
+    <div style="margin: 500px 0px 0px 520px; position: absolute; z-index: 3; width: 375px;">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </div>
+
+</body>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    .square {
+        position: absolute;
+        margin: 100px 0px 0px 300px;
+        height: 620px;
+        width: 498px;
+        background-color: #171717;
+        z-index: 1;
+    }
+
+    .logo {
+        position: absolute;
+        margin: 120px 0px 0px 500px;
+        z-index: 2;
+        text-align: center;
+    }
+</style>
+
+<style>
+    .login {
+        margin: 300px 0px 0px 360px;
+        position: absolute;
+        width: 375px;
+        z-index: 3;
+    }
+    .senha {
+        margin: 390px 0px 0px 360px;
+        position: absolute;
+        width: 375px;
+        z-index: 3;
+    }
+</style>

@@ -19,9 +19,9 @@ namespace TodoList.Controllers
 
         public IActionResult Index()
         {
-            List<UsuarioModel> contatos =_usuarioRepositorio.BuscarTodos();
+            List<UsuarioModel> usuarios =_usuarioRepositorio.BuscarTodos();
 
-            return View(contatos);
+            return View(usuarios);
         }
 
         public IActionResult Criar()
@@ -49,7 +49,7 @@ namespace TodoList.Controllers
 
                 if (apagado)
                 {
-                    TempData["MensagemSucesso"] = "Contato apagado com sucesso.";
+                    TempData["MensagemSucesso"] = "Usuário apagado com sucesso.";
                 }
                 else
                 {
@@ -76,7 +76,6 @@ namespace TodoList.Controllers
                     TempData["MensagemSucesso"] = "Contato cadastrado com sucesso.";
                     return RedirectToAction("Index");
                 }
-
 
                 return View(usuario);
             }
