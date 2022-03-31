@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TodoList.Models
 {
-    public class LoginStatus
+    public class Login
     {
         public static string loginStatus = "Deslogado";
 

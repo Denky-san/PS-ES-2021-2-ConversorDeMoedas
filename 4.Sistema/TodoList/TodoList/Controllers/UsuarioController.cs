@@ -64,11 +64,11 @@ namespace TodoList.Controllers
             }
         }
 
-        public IActionResult Logar(int id)
+        public IActionResult Logar(string Nome, string senha)
         {
-            UsuarioModel usuario = _usuarioRepositorio.ListarPorId(id);
+            
 
-            return View(usuario);
+            return View(Nome, senha);
         }
 
         [HttpPost]
