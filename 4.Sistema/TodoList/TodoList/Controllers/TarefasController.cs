@@ -13,26 +13,28 @@ namespace TodoList.Controllers
         {
             return View();
         }
+        /*
+[HttpPost]
+public IActionResult Criar(TarefasModel tarefa)
+{
 
-        [HttpPost]
-        public IActionResult Criar(TarefasModel tarefa)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    _usuarioRepositorio.Adicionar(tarefa);
-                    TempData["MensagemSucesso"] = "Contato cadastrado com sucesso.";
-                    return RedirectToAction("Index");
-                }
+try
+{
+    if (ModelState.IsValid)
+    {
+        _usuarioRepositorio.Adicionar(tarefa);
+        TempData["MensagemSucesso"] = "Contato cadastrado com sucesso.";
+        return RedirectToAction("Index");
+    }
 
-                return View(usuario);
-            }
-            catch (Exception erro)
-            {
-                TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar seu usuário. Detalhes do erro: {erro.Message}";
-                return RedirectToAction("Index");
-            }
-        }
+    return View(usuario);
+}
+catch (Exception erro)
+{
+    TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar seu usuário. Detalhes do erro: {erro.Message}";
+    return RedirectToAction("Index");
+}
+}
+*/
     }
 }
