@@ -1,4 +1,4 @@
-﻿@model TarefasModel
+﻿@model UsuarioModel
 
 @{
     ViewData["Title"] = "Tarefas";
@@ -12,17 +12,16 @@
 
     <div class="tarefaLorem"></div>
 
-
     @if (Login.loginStatus == "Deslogado")
     {
         <div class="logout">
-            <a asp-controller="Home" asp-action="Index">Log in</a>
+            <a asp-controller="Login" asp-action="Index">Log out</a>
         </div>
     }
     else
     {
         <div class="logout">
-            <a asp-controller="Home" asp-action="Index">Log out</a>
+            <a asp-controller="Login" asp-action="Index">Log in</a>
         </div>
     }
 
@@ -30,7 +29,7 @@
     <!--<form asp-controller="Tarefas" asp-action="Criar" method="post">-->
 
     <div class="addTarefaBox">
-        <input type="text" asp-controller="Usuario" asp-for="Nome" class="form-controlre" placeholder="Adicionar uma tarefa" />
+        <input type="text" asp-controller="Usuario" asp-for="tarefa" class="form-controlre" placeholder="Adicionar uma tarefa" />
     </div>
 
     <div class="text-center">

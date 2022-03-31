@@ -27,5 +27,10 @@ namespace TodoList.Models
         public PerfilEnum Perfil { get; set; }
 
         public TarefasModel tarefa;
+
+        public bool SenhaValida(string senha)
+        {
+            return Senha == senha;
+        }
     }
 }

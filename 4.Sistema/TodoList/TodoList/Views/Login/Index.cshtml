@@ -1,7 +1,21 @@
 ﻿@{
+    Layout = "_LayoutDeslogada";
+    ViewData["Title"] = "Login";
+}
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+@model LoginModel
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemErro"];
+    </div>
+}
 
 <body style="background-color:black">
 
@@ -9,16 +23,18 @@
 
     <img src="~/to-do-list-logo.png" alt="Logo ToDoList" class="logo">
 
-    <form asp-controller="Usuario" asp-action="Logar" method="post">
+    <form asp-controller="Login" asp-action="Entrar" method="post">
 
         <div class="login">
             <label for="Nome" class="form-label" style="color:white;">Login</label>
-            <input type="text" class="form-control" placeholder="Digite seu Login">
+            <input type="text" asp-for="Login" class="form-control" placeholder="Digite seu Login">
+            @Html.ValidationMessageFor(x => x.Login)
         </div>
 
         <div class="senha">
             <label for="Senha" class="form-label" style="color:white">Senha</label>
-            <input type="password" class="form-control" placeholder="Digite sua Senha">
+            <input type="password" asp-for="Senha" class="form-control" placeholder="Digite sua Senha">
+            @Html.ValidationMessageFor(x => x.Senha)
         </div>
 
         <div class="loginButton">
@@ -59,23 +75,26 @@
         width: 375px;
         z-index: 3;
     }
+
     .senha {
         margin: 390px 0px 0px 360px;
         position: absolute;
         width: 375px;
         z-index: 3;
     }
+
     .loginButton {
         margin: 500px 0px 0px 520px;
         position: absolute;
         z-index: 3;
         width: 375px;
     }
+
     .registrar {
         margin: 550px 0px 0px 495px;
         position: absolute;
         z-index: 3;
         width: 375px;
-        color:white;
+        color: white;
     }
 </style>
