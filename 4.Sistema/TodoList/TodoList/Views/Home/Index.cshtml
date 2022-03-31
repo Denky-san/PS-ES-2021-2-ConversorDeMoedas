@@ -9,21 +9,27 @@
 
     <img src="~/to-do-list-logo.png" alt="Logo ToDoList" class="logo">
 
+    <form asp-controller="Usuario" asp-action="Logar" method="post">
 
-    <div class="login">
-        <label for="Nome" class="form-label" style="color:white;">Login</label>
-        <input type="text" class="form-control" placeholder="Digite seu Login">
-    </div>
+        <div class="login">
+            <label for="Nome" class="form-label" style="color:white;">Login</label>
+            <input type="text" class="form-control" placeholder="Digite seu Login">
+        </div>
 
-    <div class="senha">
-        <label for="Senha" class="form-label" style="color:white">Senha</label>
-        <input type="password" class="form-control" placeholder="Digite sua Senha">
-    </div>
+        <div class="senha">
+            <label for="Senha" class="form-label" style="color:white">Senha</label>
+            <input type="password" class="form-control" placeholder="Digite sua Senha">
+        </div>
 
-    <div style="margin: 500px 0px 0px 520px; position: absolute; z-index: 3; width: 375px;">
-        <button type="submit" class="btn btn-primary">Login</button>
-    </div>
+        <div class="loginButton">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
 
+        <div class="registrar">
+            <a class="nav-link text-white" asp-controller="Usuario" asp-action="Criar">Registrar-se</a>
+        </div>
+
+    </form>
 </body>
 
 
@@ -58,5 +64,18 @@
         position: absolute;
         width: 375px;
         z-index: 3;
+    }
+    .loginButton {
+        margin: 500px 0px 0px 520px;
+        position: absolute;
+        z-index: 3;
+        width: 375px;
+    }
+    .registrar {
+        margin: 550px 0px 0px 500px;
+        position: absolute;
+        z-index: 3;
+        width: 375px;
+        color:white;
     }
 </style>
