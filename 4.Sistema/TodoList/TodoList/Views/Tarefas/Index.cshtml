@@ -1,0 +1,69 @@
+﻿@model TarefasModel
+@{
+    ViewData["Title"] = "Tarefas";
+}
+
+<body style="background-color:black">
+
+    <img src="~/Wallpaper.png" alt="Logo ToDoList" class="background">
+
+    <div class="leftBar"></div>
+
+    <div class="tarefaLorem"></div>
+
+    <form asp-controller="Tarefas" asp-action="Criar" method="post">
+
+        <div class="addTarefaBox">
+            <input type="text" asp-for="Nome" class="form-controlre" placeholder="Adicionar uma tarefa" />
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
+    </form>
+</body>
+
+<style>
+    .background {
+        position: absolute;
+        z-index: 0;
+        margin: auto auto auto 300px;
+        height: 750px;
+        width: 800px;
+    }
+
+    .leftBar {
+        position: absolute;
+        z-index: 0;
+        /* margin: 100px 0px 0px 300px; */
+        height: 750px;
+        width: 300px;
+        background-color: #171717;
+    }
+
+    .tarefaLorem {
+        position: absolute;
+        margin: 100px 0px 0px 350px;
+        height: 67.5px;
+        width: 700px;
+        background-color: #333333;
+        z-index: 1;
+        opacity: 80%;
+    }
+
+    .addTarefaBox {
+        position: absolute;
+        margin: 650px 0px 0px 350px;
+        height: 45px;
+        width: 700px;
+        background-color: #333333;
+        z-index: 1;
+        opacity: 80%;
+    }
+
+    .form-controlre {
+        margin: 10px auto auto 10px;
+        background-color: transparent;
+        border: none;
+    }
+</style>
