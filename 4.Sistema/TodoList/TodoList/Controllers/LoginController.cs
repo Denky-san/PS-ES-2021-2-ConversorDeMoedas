@@ -10,6 +10,8 @@ namespace TodoList.Controllers
 {
     public class LoginController : Controller
     {
+        private bool senhaInvalida = false;
+
         private readonly IUsuarioRepositorio _usuarioRepositorio;
 
         public LoginController(IUsuarioRepositorio usuarioRepositorio)
@@ -33,20 +35,24 @@ namespace TodoList.Controllers
 
                     if (usuario != null)
                     {
-                        if(usuario.SenhaValida(loginModel.Senha))
+                        if (usuario.SenhaValida(loginModel.Senha) == true)
                         {
                             return RedirectToAction("Index", "Tarefas");
                             //Login.loginStatus = "Logado";
                         }
 
-                        else
-                        {
-                            TempData["MensagemErro"] = $"Ops, A Senha é inválida. Por favor, tente novamente.";
-                        }
-
+                        senhaInvalida = true;
                     }
 
-                    TempData["MensagemErro"] = $"Ops, Usuário e/ou senha inválidos. Por favor, tente novamente.";
+                    if (senhaInvalida)
+                    {
+                        TempData["MensagemErro"] = $"Ops, A Senha é inválida. Por favor, tente novamente.";
+                    }
+                    else
+                    {
+                        TempData["MensagemErro"] = $"Ops, Usuário e/ou senha inválidos. Por favor, tente novamente.";
+                    }
+                    senhaInvalida = false;
                 }
 
                 return View("Index");

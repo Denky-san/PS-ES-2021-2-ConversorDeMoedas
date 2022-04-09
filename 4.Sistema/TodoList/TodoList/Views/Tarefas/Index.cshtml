@@ -1,4 +1,4 @@
-﻿@model UsuarioModel
+﻿@model LoginModel
 
 @{
     ViewData["Title"] = "Tarefas";
@@ -29,7 +29,7 @@
     <!--<form asp-controller="Tarefas" asp-action="Criar" method="post">-->
 
     <div class="addTarefaBox">
-        <input type="text" asp-controller="Usuario" asp-for="tarefa" class="form-controlre" placeholder="Adicionar uma tarefa" />
+        <input type="text" class="form-controlre" placeholder="Adicionar uma tarefa" />
     </div>
 
     <div class="text-center">
@@ -39,19 +39,6 @@
     <div class="todas">
         <a>Todas</a>
     </div>
-
-    <div class="importantes">
-        <a>Importantes</a>
-    </div>
-
-    <div class="concluidas">
-        <a>Concluídas</a>
-    </div>
-
-    <div class="ativas">
-        <a>Ativas</a>
-    </div>
-
 
     <!--  </form>-->
 </body>
